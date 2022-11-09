@@ -11,4 +11,11 @@ class ApplicationController < Sinatra::Base
     todo.to_json
   end
 
+  #fetch by id
+  get '/todos/:id' do
+    todo = Todo.find(params[:id])
+    todo.to_json
+  end
+
+
 end
