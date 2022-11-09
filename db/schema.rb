@@ -10,16 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_08_142416) do
-
-  create_table "categories", force: :cascade do |t|
-    t.string "category"
-  end
-
-  create_table "todos", force: :cascade do |t|
-    t.string "item"
-    t.string "importance"
-    t.integer "category_id"
-  end
+ActiveRecord::Schema.define(version: 0) do
 
 end
