@@ -23,6 +23,7 @@ class ApplicationController < Sinatra::Base
       text: params[:text],
       category: params[:category],
       done: params[:done],
+      user_id: params[:user_id]
     )
     todo.to_json
   end
@@ -41,6 +42,26 @@ class ApplicationController < Sinatra::Base
     todo = Todo.find(params[:id])
     todo.destroy
     todo.to_json
+  end
+
+
+  get '/users' do
+    user = User.all
+    user.to_json
+  end
+
+  get '/users/:id' do
+    user = User.find(params[:id])
+    user.to_json
+  end
+
+  post '/users' do
+    user = User.create(
+      name: params[:name],
+      email: params[:email],
+      password: params[:password]
+    )
+    user.to_json
   end
 
 
